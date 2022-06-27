@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="adapter"
+            type="com.busraerpay.e_commerceappfinalproject.presentation.bag.BagAdapter" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BagFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/bag_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="80dp"
+            android:paddingLeft="20dp"
+            style="@style/HomeandBagTitleStyle"
+            android:text="My Bag" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bagrecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{adapter}"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/bag_amount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:fontFamily="@font/my_font"
+            android:textStyle="normal|bold"
+            android:textColor="#919393"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:text="Total amount:" />
+
+        <TextView
+            android:id="@+id/bag_totalamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/my_font"
+            android:textStyle="normal|bold"
+            android:textColor="#222222"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:text="24$" />
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/bag_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="CHECK OUT" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

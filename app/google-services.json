@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "740801378996",
+    "project_id": "ecommerceappfinalproject-4e147",
+    "storage_bucket": "ecommerceappfinalproject-4e147.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740801378996:android:7fbd0353334cf9e35a35e1",
+        "android_client_info": {
+          "package_name": "com.busraerpay.e_commerceappfinalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740801378996-koas696up9aeni8ccm3tnnljeah7eam9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzFFuLqxaN85sddluXHEwfDAJY9bnW9-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740801378996-koas696up9aeni8ccm3tnnljeah7eam9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SignupFragment">
+
+        <ImageView
+            android:id="@+id/signup_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_signup_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/signup_title"
+            style="@style/LoginScreensTitleStyle"
+            android:text="Sign up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.007" />
+
+        <EditText
+            android:id="@+id/signup_name_input"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/ic_login_screens_box"
+            android:ems="10"
+            android:fontFamily="@font/my_font"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textStyle="italic"
+            android:drawableLeft="@drawable/ic_outline_user"
+            android:drawablePadding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/signup_image"
+            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintStart_toStartOf="@+id/signup_image"
+            app:layout_constraintTop_toBottomOf="@+id/signup_image" />
+
+        <EditText
+            android:id="@+id/signup_email_input"
+            style="@style/EmailInputStyle"
+            android:layout_marginTop="8dp"
+            android:hint="Email"
+            app:layout_constraintEnd_toEndOf="@+id/signup_name_input"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signup_name_input"
+            app:layout_constraintTop_toBottomOf="@+id/signup_name_input" />
+
+        <EditText
+            android:id="@+id/signup_password_input"
+            style="@style/PasswordInputStyle"
+            android:layout_marginTop="8dp"
+            android:hint="Password"
+            app:layout_constraintEnd_toEndOf="@+id/signup_email_input"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signup_email_input"
+            app:layout_constraintTop_toBottomOf="@+id/signup_email_input" />
+
+        <TextView
+            android:id="@+id/haveaccount_text"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:text="Already have an account?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.827"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signup_password_input"
+            style="@style/ArrowTextStyle" />
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_marginTop="72dp"
+            android:text="SIGN UP"
+            app:layout_constraintEnd_toEndOf="@+id/signup_password_input"
+            app:layout_constraintHorizontal_bias="0.593"
+            app:layout_constraintStart_toStartOf="@+id/signup_password_input"
+            app:layout_constraintTop_toBottomOf="@+id/signup_password_input"
+            style="@style/ButtonStyle" />
+
+        <TextView
+            android:id="@+id/socialaccount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/my_font"
+            android:text="Or sign up with social account"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/signup_button"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="@+id/signup_button"
+            app:layout_constraintTop_toBottomOf="@+id/signup_button" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/socialaccount_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+    şimdi buraya modelimizi getirmemiz gerekiyor. (Productsmodel)bunu yapmamızın
+sebebi modelimizi item_products layoutun içine işlememiz gerekiyor.
+bu layouttaki o modele ihtiyacımız var.modeli eğer layoutun
+içine gönderirsek yani her item dan gelen değeri biliyor
+olursak burda hemen set edebiliriz. bunu yapmak için data
+tagı açıyoruz. böyle yaparak modelimizi aldık.
+    -->
+    <data>
+        <variable
+            name="itemsproducts"
+            type="com.busraerpay.e_commerceappfinalproject.domain.model.ProductsModel" />
+    </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp">
+
+       <androidx.cardview.widget.CardView
+           android:id="@+id/cardView"
+           android:layout_width="157dp"
+           android:layout_height="335dp"
+           android:layout_margin="10dp"
+           android:layout_weight="1"
+           android:backgroundTint="#ffffff"
+           android:clickable="true"
+           app:cardCornerRadius="20dp"
+           app:cardElevation="7dp"
+           tools:ignore="MissingConstraints">
+
+           <LinearLayout
+               android:id="@+id/linearLayout"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+
+               <ImageView
+                   android:id="@+id/productImage"
+                   android:layout_width="156dp"
+                   android:layout_height="215dp"
+                   android:layout_weight="1"
+                   />
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <androidx.appcompat.widget.AppCompatRatingBar
+                       android:id="@+id/productRatingBar"
+                       style="@style/RatingBarStyle"
+                       android:rating="@{itemsproducts.rate}" />
+
+                   <TextView
+                       android:id="@+id/productCount"
+                       android:layout_weight="1"
+                       android:text='@{"(" + itemsproducts.count + ") "}'
+                       style="@style/ProductCountStyle" />
+
+               </LinearLayout>
+
+               <TextView
+                   android:id="@+id/productCategory"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_weight="1"
+                   android:fontFamily="@font/my_font"
+                   android:text='@{itemsproducts.category + " "}'
+                   android:textColor="#9B9B9B"
+                   android:textSize="11sp"
+                   android:textStyle="italic|bold" />
+
+               <TextView
+                   android:id="@+id/productTitle"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginTop="1dp"
+                   android:layout_weight="1"
+                   android:fontFamily="@font/my_font"
+                   android:text="@{itemsproducts.title}"
+                   android:textSize="15sp"
+                   android:textStyle="italic|bold" />
+
+               <TextView
+                   android:id="@+id/productPrice"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginTop="1dp"
+                   android:layout_weight="1"
+                   android:fontFamily="@font/my_font"
+                   android:text='@{itemsproducts.price + "$"}'
+                   android:textSize="14sp"
+                   android:textStyle="italic|bold" />
+
+
+           </LinearLayout>
+
+           <ImageView
+               android:id="@+id/newLabelBackground"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="20dp"
+               app:layout_constraintBottom_toTopOf="@+id/productImage"
+               app:layout_constraintEnd_toStartOf="@+id/productImage"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:srcCompat="@drawable/product_new_label_background" />
+
+           <TextView
+               android:id="@+id/newLabelText"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="13dp"
+               android:layout_marginTop="23dp"
+               android:fontFamily="@font/my_font"
+               android:text="NEW "
+               android:textColor="#FFFFFF"
+               android:textSize="14sp"
+               android:textStyle="italic|bold" />
+
+           <ImageView
+               android:id="@+id/favBackground"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="125dp"
+               android:layout_marginTop="185dp"
+               app:srcCompat="@drawable/product_fav_background" />
+
+           <ImageButton
+               android:id="@+id/fav_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="129dp"
+               android:layout_marginTop="192dp"
+               android:clickable="true"
+               android:background="@drawable/cardview_fav_selector"
+               app:srcCompat="@drawable/favorites_outline" />
+
+       </androidx.cardview.widget.CardView>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

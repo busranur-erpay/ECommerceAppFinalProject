@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_shopping"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.busraerpay.e_commerceappfinalproject.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shop"
+        android:name="com.busraerpay.e_commerceappfinalproject.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/bag"
+        android:name="com.busraerpay.e_commerceappfinalproject.BagFragment"
+        android:label="fragment_bag"
+        tools:layout="@layout/fragment_bag" >
+        <action
+            android:id="@+id/action_bag_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favorites"
+        android:name="com.busraerpay.e_commerceappfinalproject.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.busraerpay.e_commerceappfinalproject.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.busraerpay.e_commerceappfinalproject.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail">
+
+        <argument
+            android:name="productModel"
+            app:argType="com.busraerpay.e_commerceappfinalproject.domain.model.ProductsModel" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_bag"
+            app:destination="@id/bag" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_home"
+            app:destination="@id/home" />
+
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.busraerpay.e_commerceappfinalproject.MainActivity"
+        android:label="MainActivity" />
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.busraerpay.e_commerceappfinalproject.SuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" >
+        <action
+            android:id="@+id/action_successFragment_to_home"
+            app:destination="@id/home" />
+    </fragment>
+</navigation>
