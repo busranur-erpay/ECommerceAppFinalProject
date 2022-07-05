@@ -35,9 +35,13 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        fragmentProfileBinding.button3.setOnClickListener {
+        fragmentProfileBinding.logoutButton.setOnClickListener {
             signoutUser()
            findNavController().navigate(R.id.action_profile_to_mainActivity)
+        }
+
+        fragmentProfileBinding.logoutBack.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_to_favorites)
         }
 
     }

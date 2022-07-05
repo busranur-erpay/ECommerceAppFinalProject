@@ -17,6 +17,7 @@ import com.busraerpay.e_commerceappfinalproject.presentation.bag.BagViewModel
 import com.busraerpay.e_commerceappfinalproject.presentation.favorites.FavoritesAdapter
 import com.busraerpay.e_commerceappfinalproject.presentation.favorites.FavoritesViewModel
 import com.busraerpay.e_commerceappfinalproject.presentation.product.ProductsViewModel
+import com.google.firebase.auth.FirebaseAuth
 
 class FavoritesFragment : Fragment() {
 
@@ -43,6 +44,7 @@ class FavoritesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
        // favoritesViewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
+
 
         favoritesViewModel.favProductsList.observe(viewLifecycleOwner, Observer { favList ->
             Log.e("HOME FRAGMENT", "$favList")

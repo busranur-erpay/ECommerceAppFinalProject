@@ -41,11 +41,6 @@ class BagFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //linearlayoutmanager tanımlıyoruz
-
-
-        //view model
-       // bagViewModel = ViewModelProvider(this).get(BagViewModel::class.java)
 
             fragmentBagBinding.bagButton.setOnClickListener {
                 findNavController().navigate(R.id.action_bag_to_successFragment)
@@ -61,24 +56,23 @@ class BagFragment : Fragment() {
             Log.v("Bag FRAGMENT", "$bagList")
             val adapter = BagAdapter(bagList) //adapter ü tanımladık
             fragmentBagBinding.setVariable(BR.adapter,adapter)
-            //totalAmount(bagList)
+
+            //add price
+            var start: Double = 0.0
+            bagList.forEach { product ->
+              val price =  product.price.toDouble()
+                price.let {
+                    start = (start + it)
+                    fragmentBagBinding.bagTotalamount.text = start.toString() + "$"
+                }
+            }
         })
+
         val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
         //layoutmanager i recycler ın içine set etmemiz gerkiyor.
         fragmentBagBinding.bagrecycler.layoutManager = linearLayoutManager
 
 
     }
-
-    /*
-    fun totalAmount(baglist: List<ProductsModel>){
-        var totalAmount=0.0
-        for (i in 1..baglist.size){
-            totalAmount += baglist[i].price
-        }
-        fragmentBagBinding.bagTotalamount.text = totalAmount.toString()
-    }
-
-     */
 
 }

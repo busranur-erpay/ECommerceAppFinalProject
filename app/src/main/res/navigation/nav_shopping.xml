@@ -18,7 +18,11 @@
         android:id="@+id/shop"
         android:name="com.busraerpay.e_commerceappfinalproject.ShopFragment"
         android:label="fragment_shop"
-        tools:layout="@layout/fragment_shop" />
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_shop_to_home"
+            app:destination="@id/home" />
+    </fragment>
     <fragment
         android:id="@+id/bag"
         android:name="com.busraerpay.e_commerceappfinalproject.BagFragment"
@@ -41,6 +45,9 @@
         <action
             android:id="@+id/action_profile_to_mainActivity"
             app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_profile_to_favorites"
+            app:destination="@id/favorites" />
     </fragment>
     <fragment
         android:id="@+id/productDetailFragment"
@@ -71,5 +78,8 @@
         <action
             android:id="@+id/action_successFragment_to_home"
             app:destination="@id/home" />
+        <action
+            android:id="@+id/action_successFragment_to_bag"
+            app:destination="@id/bag" />
     </fragment>
 </navigation>

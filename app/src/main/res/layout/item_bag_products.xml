@@ -77,6 +77,47 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/minus_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_minus"
+                        app:tint="#919393"
+                        app:fabSize="mini"
+                        app:backgroundTint="#e1bee7"/>
+
+                    <TextView
+                        android:id="@+id/count_text"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/my_font"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"
+                        android:text="1"/>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/plus_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_plus"
+                        app:tint="#919393"
+                        app:fabSize="mini"
+                        app:backgroundTint="#e1bee7"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <ImageView

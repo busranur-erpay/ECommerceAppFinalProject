@@ -78,51 +78,23 @@ class ProductDetailFragment : Fragment() {
         }
 
         fragmentProductDetailBinding.detailFavButton.setOnClickListener {
-            favoritesViewModel.addFavoriteProducts(
-                FavoritesProductsRoomModel(
-                    id = product.id,
-                    user = product.user,
-                    title = product.title,
-                    price = product.price,
-                    description = product.description,
-                    category = product.category,
-                    image = product.image,
-                    rate = product.rate,
-                    count = product.count,
-                    sale_state = product.sale_state
+            FirebaseAuth.getInstance().currentUser?.let { user ->
+                favoritesViewModel.addFavoriteProducts(
+                    FavoritesProductsRoomModel(
+                        id = product.id,
+                        user = user.uid,
+                        title = product.title,
+                        price = product.price,
+                        description = product.description,
+                        category = product.category,
+                        image = product.image,
+                        rate = product.rate,
+                        count = product.count,
+                        sale_state = product.sale_state
+                    )
                 )
-            )
-        }
-
-/*
-        fragmentProductDetailBinding.detailButton.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                product.user?.let {
-                    product.title?.let { it1 ->
-                        product.price?.let { it2 ->
-                            product.description?.let { it3 ->
-                                product.category?.let { it4 ->
-                                    product.image?.let { it5 ->
-                                        product.count?.let { it6 ->
-                                            product.sale_state?.let { it7 ->
-                                                productsDetailViewModel.addToBag(
-                                                    it,
-                                                    it1,
-                                                    it2,
-                                                    it3,
-                                                    it4, it5,product.rate, it6, it7
-                                                )
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                Log.v("POST","POST OLDUUUU")
             }
-        } */
+        }
 
     }
 

@@ -81,7 +81,7 @@
 
         <Button
             android:id="@+id/signup_button"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="52dp"
             android:text="SIGN UP"
             app:layout_constraintEnd_toEndOf="@+id/signup_password_input"
             app:layout_constraintHorizontal_bias="0.593"
@@ -93,7 +93,7 @@
             android:id="@+id/socialaccount_text"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/my_font"
             android:text="Or sign up with social account"
             android:textSize="14sp"
@@ -103,14 +103,27 @@
             app:layout_constraintStart_toStartOf="@+id/signup_button"
             app:layout_constraintTop_toBottomOf="@+id/signup_button" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
+        <ImageButton
+            android:id="@+id/facebook_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/socialaccount_text" />
+            app:layout_constraintCircleRadius="50dp"
+            app:layout_constraintStart_toStartOf="@+id/socialaccount_text"
+            app:layout_constraintTop_toBottomOf="@+id/socialaccount_text"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_icon_facebook"
+            style="@style/FacebookAndGoogleButtonStyle" />
+
+        <ImageButton
+            android:id="@+id/google_button"
+            style="@style/FacebookAndGoogleButtonStyle"
+            android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/socialaccount_text"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/facebook_button"
+            app:layout_constraintTop_toBottomOf="@+id/socialaccount_text"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_icon_google" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     </layout>

@@ -1,5 +1,6 @@
 package com.busraerpay.e_commerceappfinalproject.presentation.bag
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -39,6 +40,25 @@ class BagAdapter(val bagList: List<ProductsModel>):
             val binding= bagProductsBinding as ItemBagProductsBinding
             Picasso.get().load(productsModel.image).into(binding.bagProductImage)
             binding.setVariable(BR.itemsbag,productsModel)
+
+            var price = productsModel.price
+            var count = binding.countText.text.toString().toInt()
+            binding.plusButton.setOnClickListener {
+                count++
+                binding.countText.text = count.toString()
+                price += price
+                binding.bagProductPrice.text = price.toString() + "$"
+            }
+
+            binding.minusButton.setOnClickListener {
+                count--
+                binding.countText.text = count.toString()
+                price= productsModel.price
+                price = (price * count)
+                binding.bagProductPrice.text = price.toString() + "$"
+
+            }
+
 
         }
 

@@ -9,10 +9,6 @@
             type="com.busraerpay.e_commerceappfinalproject.presentation.bag.BagAdapter" />
     </data>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -41,7 +37,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bagrecycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="370dp"
             android:adapter="@{adapter}"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -56,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
+            android:paddingLeft="10dp"
             android:fontFamily="@font/my_font"
             android:textStyle="normal|bold"
             android:textColor="#919393"
@@ -74,7 +71,7 @@
             android:textColor="#222222"
             android:gravity="right"
             android:layout_weight="1"
-            android:text="24$" />
+            android:text="0" />
 
     </LinearLayout>
 
@@ -84,13 +81,12 @@
             android:layout_height="wrap_content"
             style="@style/ButtonStyle"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
             android:text="CHECK OUT" />
 
 
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 </layout>

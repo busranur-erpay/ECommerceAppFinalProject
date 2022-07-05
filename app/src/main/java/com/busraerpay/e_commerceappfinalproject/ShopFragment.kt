@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busraerpay.e_commerceappfinalproject.databinding.FragmentShopBinding
 import com.busraerpay.e_commerceappfinalproject.presentation.bag.BagAdapter
@@ -33,6 +34,10 @@ class ShopFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        fragmentShopBinding.categoryBack.setOnClickListener {
+            findNavController().navigate(R.id.action_shop_to_home)
+        }
 
         shopViewModel.categoryList.observe(viewLifecycleOwner, Observer { shopList ->
             Log.v("Bag FRAGMENT", "$shopList")

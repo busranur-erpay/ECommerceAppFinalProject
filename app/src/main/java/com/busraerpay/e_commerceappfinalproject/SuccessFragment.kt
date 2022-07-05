@@ -33,6 +33,10 @@ class SuccessFragment : Fragment() {
         fragmentSuccessBinding.successButton.setOnClickListener {
             findNavController().navigate(R.id.action_successFragment_to_home)
         }
+
+        fragmentSuccessBinding.successBack.setOnClickListener {
+            findNavController().navigate(R.id.action_successFragment_to_bag)
+        }
     }
 
 
